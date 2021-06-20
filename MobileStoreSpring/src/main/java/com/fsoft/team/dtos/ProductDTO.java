@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDTO {
-	private String productID;
+	private long productID;
 	private String productName;
 	private double unitPrice;
 	private int unitInStock;
 	private String description;
 	private String manufacturer;
-	private String category;
 	private String condition;
 	private String imgProduct;
 	private String categoryID;

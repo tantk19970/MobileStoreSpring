@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Success</title>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+</head>
+
+<body>
+    <span>ID:</span><span th:text="${product.productID}"></span> <br />
+	 <span>Name:</span><span th:text="${product.productName}"></span><br />
+	 <span>UnitPrice:</span><span th:text="${product.unitPrice}"></span><br />
+	 <span>UnitInStock:</span><span th:text="${product.unitInStock}"></span><br />
+	 <span>Description:</span><span th:text="${product.description}"></span><br />
+	 <span>Manufacturer:</span><span th:text="${product.manufacturer}"></span><br />
+	 <span>Condition:</span><span th:text="${product.condition}"></span><br />
+	 <span>Img:</span><span th:text="${product.imgProduct}"></span><br />
+	 <span>CategoryID:</span><span th:text="${product.categoryID}"></span><br />
+	<h1>Hello</h1>
+</body>
+	
+
+</html>

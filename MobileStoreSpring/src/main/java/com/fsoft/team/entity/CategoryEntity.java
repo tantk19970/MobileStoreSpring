@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class CategoryEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String categoryID;
+	private long categoryID;
 	private String categoryName;
 	@OneToMany(mappedBy = "categoryOfProduct", fetch = FetchType.LAZY)
 	public List<ProductEntity> listProduct;

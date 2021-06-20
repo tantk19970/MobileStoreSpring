@@ -1,5 +1,7 @@
 package com.fsoft.team.service;
 
-public interface ProductService {
+import com.fsoft.team.entity.ProductEntity;
 
+public interface ProductService {
+	public void addProduct(ProductEntity product);
 }
