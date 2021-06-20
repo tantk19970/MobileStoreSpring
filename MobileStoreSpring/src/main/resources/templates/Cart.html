@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cart Page</title>
+        <link href="./shoppingStyle.css" rel="stylesheet" type="text/css"/>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Cart</h1>
+            <p>All the selected products in your cart</p>
+        </header>
+        <div class="cart">
+            <div>
+                <form th:action="clear" method="Post">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i>Clear Cart</button>
+                </form>
+                <div th:if="${CART.getCart().size() > 0}"><a th:href="@{'/checkout?txtTotalPrice=' + ${#aggregates.sum(CART.getCart().values().![unitPrice * unitInStock])}}" class="btn btn-success"><i class="fa fa-shopping-cart"></i>Check out</a>
+</div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="product : ${CART.getCart().values()}">
+                        <td scope="col" th:text="${product.productName}"></td>
+                        <td scope="col" th:text="${product.unitInStock}"></td>
+                        <td scope="col" th:text="${product.unitPrice}"></td>
+                        <td scope="col" th:text="${product.unitPrice * product.unitInStock}"></td>
+                        <td>
+                            <a th:href="@{'/remove?txtProductID=' + ${product.productID}}" class="btn btn-danger"><i class="fa fa-times"></i>Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <th></th>
+                <td></td>
+                <th>Grand Total:</th>
+                <td id="total" th:text="${#aggregates.sum(CART.getCart().values().![unitPrice * unitInStock])}"></td>
+                <input type="hidden" name="txtTotalPrice" th:value="${#aggregates.sum(CART.getCart().values().![unitPrice * unitInStock])}">
+                <td></td>
+            </table>
+            <a href="back" class="btn btn-success"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Continue Shopping</a>
+            <h3 th:text="${THANK}"></h3>
+    </body>
+</html>

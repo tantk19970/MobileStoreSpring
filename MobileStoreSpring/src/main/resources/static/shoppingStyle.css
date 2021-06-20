@@ -1,0 +1,303 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 7, 2021, 4:53:05 PM
+    Author     : DELL
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #eeeeee;
+    height: 200px;
+    margin-bottom: 30px;
+    padding: 50px 0 50px 100px;
+}
+header h1{
+    font-size: 50px;
+}
+header p{
+    font-size: large;
+}
+
+/* Login Page */
+.login {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+    border: 2px;
+    border-style: groove;
+    padding-top: 0px;
+}
+
+.loginForm {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 20px;
+    background-color: #eeeeee;
+}
+.loginText {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.loginText input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+}
+.loginText input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0 22px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+font {
+    color: red;
+    font-size: 30px;
+}
+
+/* Shopping Page */
+header a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 0;
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    cursor: pointer;  
+    position: absolute;
+    top: 40px;
+    right: 100px;
+
+}
+
+header a i {
+    margin-right: 10px;
+}
+
+.products-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.image {
+    width: 20%;
+    margin: 20px;
+    padding: 20px 10px 20px 10px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    display: inline;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+}
+
+.detail-btn{
+    cursor: pointer;
+    background-color: #428bca;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.order-btn{
+    cursor: pointer;
+    background-color: #f0ad4e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 110px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.products-list .image form button i {
+    padding-right: 10px;
+}
+
+form {
+    display: inline;
+}
+
+/* Add Product Page*/
+.logout-btn {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 0;
+    background-color: #d9534f;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    cursor: pointer;  
+    position: absolute;
+    top: 40px;
+    right: 100px;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin: 5px 0 20px 0;
+    width: 100%;
+}
+
+.info_part {
+    display: flex;
+}
+
+.file {
+    padding-top: 15px;
+}
+
+.info_title {
+    font-weight: bold;
+}
+
+.des {
+    margin-top: 10px;
+}
+
+.info_fill {
+    padding-left: 30px;
+}
+
+.info_part div {
+    width: 16%;
+    text-align: right;
+}
+
+input[type=text], input[type=number]{
+    width: 206px;
+}
+
+.radioFirst {
+    margin: 6px 5px 0 30px;
+}
+
+.radioSecond {
+    margin: 6px 5px 0 6px;
+}
+
+.add-btn{
+    cursor: pointer;
+    background-color: #428bca;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    margin-top: 10px;
+    margin-left: 235px;
+}
+
+/* product-detail */
+.detail {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.detail .img_detail {
+    display: inline-block;
+    width: 40%;
+    margin-right: 50px;
+}
+
+.detail .info_detail input {
+    color: white;
+    height: 20px;
+    width: 60px;
+    margin-bottom: 5px;
+    display: inline;
+}
+
+.img_detail img {
+    height: 100%
+}
+
+.info_detail {
+    margin-left: 50px;
+    padding-top: 15px; 
+    width: 50%;
+    display: inline;
+    text-align: left
+}
+
+.pDetail {
+    font-weight: bold;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+#phoneManu, #phoneCate, #phoneInStock {
+    display: inline-block;
+}
+#phoneManu {
+    color: #6495ED;
+}
+
+#phoneID {
+    width: 100px;
+}
+
+#orderD {
+    color: white;
+}
+
+.detail .info_detail a i {
+    margin-right: 10px; 
+}
+
+.detail .info_detail form button i {
+    margin-right: 10px; 
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+}
+/* Cart */
+.cart {
+    padding: 0 100px 0 100px;
+}
+
+.cart table tbody tr td button i, .cart div button i, .cart a i {
+    margin-right: 10px;
+}
+
+.cart div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#total {
+    font-weight: bold;
+}
