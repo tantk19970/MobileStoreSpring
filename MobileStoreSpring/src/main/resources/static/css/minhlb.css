@@ -1,0 +1,304 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jun 3, 2021, 8:52:43 AM
+    Author     : Minh
+*/
+body{
+    font-family: Arial;
+}
+header{
+    background-color: rgb(238, 238, 238);
+    height: 150px;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+header .title{
+    padding-top: 40px;
+    padding-left: 100px;
+}
+header .description{
+    font-size: medium;
+    padding-left: 100px;
+    margin-bottom: 1000px;
+}
+.login-form{
+    border: 1px solid gray;
+    width: 300px;
+    margin-left: 850px;
+    border-radius: 5px;
+}
+.login-form-header{
+    background-color: rgb(238,238,238);
+    border-bottom: 1px solid gray;
+    padding: 10px 10px 10px 10px;
+}
+.login-form-body{
+    padding: 10px 10px 10px 10px;
+}
+#username, #password{
+    margin-bottom: 10px;
+    width: 97%;
+    height: 20px;
+}
+#login-btn{
+    background-color: rgb(92,184,92);
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#login-btn:hover{
+    background-color: rgb(82,180,82)
+}
+/*#login-btn, #logout-btn, #add-product-btn, #view-cart-btn:active{
+    transform: translateY(0.5px);
+}*/
+button:active{
+    transform: translateY(0.5px);
+}
+button:hover{
+    cursor: pointer;
+}
+#logout-btn{
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    background-color: rgb(217,83,79);
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+.product-add-form{
+    margin-left: 100px;
+}
+.product-add-header{
+    border-bottom: 1px solid rgb(238,238,238);
+    max-width: 96%;
+}
+.product-add-body input{
+    margin-left: 10px;
+}
+.product-add-body p{
+    display: inline-block;
+    width: 130px;
+    text-align: right;
+    font-size: small;
+    font-weight: bold;
+}
+.product-add-body label{
+    font-size: smaller;
+}
+#description{
+    margin-left: 10px;
+}
+#condition-old, #condition-refurbished{
+    margin-left: -1px;
+}
+#add-product-btn{
+    margin-left: 150px;
+    margin-top: 10px;
+    height: 30px;
+    background-color: rgb(66,139,202);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+#view-cart-btn{
+    margin-left: 150px;
+    margin-top: 10px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 3px;
+    text-align: center;
+    width: 90px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    text-align: center;
+}
+
+button i span {
+    font-weight: normal;
+    font-family: Arial;
+    text-align: center;
+}
+#detail-btn{
+    background-color: rgb(66,139,202);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    margin-left: 10px;
+}
+#order-btn{
+    background-color: rgb(240,173,78);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 110px;
+    margin-left: 10px;
+}
+#back-btn{
+    background-color: rgb(92,184,92);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    margin-left: 10px;
+}
+.btn-link{
+    color: white;
+    text-decoration: none;
+}
+.product-form{
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.product-form .product{
+    border: 1px solid rgb(238,238,238);
+    border-radius: 5px;
+    display: inline-block;
+    width: 250px;
+    max-height: 600px;
+    padding: 0 10px 20px 10px;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.product-form img{
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 200px;
+    max-width: 200px;
+}
+.product-description, .product-price, .product-units-in-stock, .product-category, .product-manufacturer, .product-code{
+    font-size: smaller;
+}
+
+.product-category{
+    color: rgb(108, 189, 236);
+}
+.product-name{
+    font-size: larger;
+}
+.product-detail-form{
+    display: inline;
+}
+.product-detail-form img{
+    max-height: 400px;
+    max-width: 400px;
+    float: left;
+    margin-left: 50px;
+}
+.product-detail{
+    width: 65%;
+    float: right;
+    margin-right: 10px;
+}
+.product-detail .lable{
+    font-size: small;
+    font-weight: 600;
+}
+.product-detail p{
+    display: inline-block;
+}
+.product-code{
+    border-radius: 3px;
+    background-color: rgb(240,173,78);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    width: 8%;
+    text-align: center;
+}
+.cart-form{
+    display: block;
+}
+.cart-form-header{
+    display: inline;
+}
+#clear-cart-btn{
+    vertical-align: top;
+    float: left;
+    margin-left: 100px;
+    color: white;
+    background-color: rgb(217,83,79);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+#check-out-btn{
+    vertical-align: top;
+    float: right;
+    margin-right: 100px;
+    color: white;
+    background-color: rgb(92,184,92);
+    border: none;
+    border-radius: 5px;
+    width: 110px;
+    height: 30px;
+}
+#remove-btn{
+    color: white;
+    background-color: rgb(217,83,79);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 20px;
+}
+.cart-form-footer #continue-shopping-btn{
+    background-color: rgb(92,184,92);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.cart-form-body{
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    clear: both;
+}
+th, td{
+    border-top: 1px solid rgb(238,238,238);
+    max-width: 96%;
+    height: 30px;
+}
+
+.cart-product{
+    width: 600px;
+}
+.cart-quantity{
+    width: 400px;
+}
+.cart-unit-price{
+    width: 400px;
+}
+.cart-price{
+    width: 300px;
+}
+.cart-action{
+    width: 300px;
+}
