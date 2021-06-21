@@ -63,7 +63,11 @@ public class ProductController {
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         product.setImgProduct(fileName);
         product.setCondition(condition);
+<<<<<<< HEAD
         String uploadDir = "src/main/resources/static/img/" + fileName;
+=======
+        String uploadDir = "/static/img/" + fileName;
+>>>>>>> df958a0514786095c23c8ac90eb0d4e4916573a0
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         ProductEntity entity = new ProductEntity();
         entity.setProductName(product.getProductName());
