@@ -159,7 +159,7 @@ public class ProductController {
         for (int i = 0; i < listProduct.size(); i++) {
         	listProductDTO.add(new ProductDTO(listProduct.get(i).getProductID(), listProduct.get(i).getProductName()));
         }
-
+// fetch
         model.addAttribute("PRODUCT_LIST", listProductDTO);
         return "list-products";
     }

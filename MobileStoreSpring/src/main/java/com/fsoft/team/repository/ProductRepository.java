@@ -18,4 +18,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     
     @Query("SELECT p.productID,p.productName FROM ProductEntity p WHERE p.categoryID= ?1")
     public List<ProductDTO> getListByCategory();
+    //repo
 }
