@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/29d890d60e.js" crossorigin="anonymous"></script>
+    <link th:href="@{/css/minhlb.css}" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <div class="title">Products</div>
+</header>
+<main>
+    <div class="product-detail-form">
+        <div>
+            <img th:src="@{'/img/' + ${productDetail.getImgProduct()} + '/' + ${productDetail.getImgProduct()}}" alt=""/>
+        </div>
+        <div class="product-detail">
+            <p class="product-name" th:text="${productDetail.getProductName()}"></p><br/>
+            <p class="product-description" th:text="${productDetail.getDescription()}"></p><br/>
+            <p class="lable">Item Code:</p> <p class="product-code" th:text="${productDetail.getProductID()}"></p><br/>
+            <p class="lable">manufacturer:</p> <p class="product-manufacturer" th:text="${productDetail.getManufacturer()}"> </p><br/>
+            <p class="lable">category:</p> <p class="product-category" th:text="${productDetail.getCategoryOfProduct().getCategoryName()}"></p><br/>
+            <p class="lable">Available units in stock:</p> <p class="product-units-in-stock" th:text="${productDetail.getUnitInStock()}"></p><br/>
+            <p class="product-price" th:text="${productDetail.getUnitPrice()}"></p><br/>
+            <button type="button" id="back-btn" onclick="window.history.back()"><i class="fas fa-arrow-circle-left"> <span>back</span></i></button>
+            <button type="button" id="order-btn"><i class="fas fa-shopping-cart"><a th:href="@{/product-detail/addToCart(productID=${productDetail.getProductID()})}" class="btn-link"> <span>Order Now</span> </a></i></button>
+        </div>
+    </div>
+</main>
+</body>
+</html>
