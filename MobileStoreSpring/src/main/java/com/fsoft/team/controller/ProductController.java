@@ -15,6 +15,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -147,5 +148,19 @@ public class ProductController {
         cart.delete(productID);
         model.addAttribute("CART", cart);
         return "Cart";
+    }
+    @RequestMapping("/list-products")
+    public String listProductHandler(@RequestAttribute("LISTCATEGORY") Long categoryID, Model model) {
+    	ProductDTO product = new ProductDTO();
+        model.addAttribute("product", product);
+        
+    	List<ProductEntity> listProduct= productService.getListByCategory(categoryID);
+    	List<ProductDTO> listProductDTO = new ArrayList<ProductDTO>();
+        for (int i = 0; i < listProduct.size(); i++) {
+        	listProductDTO.add(new ProductDTO(listProduct.get(i).getProductID(), listProduct.get(i).getProductName()));
+        }
+
+        model.addAttribute("PRODUCT_LIST", listProductDTO);
+        return "list-products";
     }
 }

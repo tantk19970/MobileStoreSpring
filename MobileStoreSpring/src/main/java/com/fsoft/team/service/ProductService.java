@@ -1,5 +1,6 @@
 package com.fsoft.team.service;
 
+import com.fsoft.team.dtos.ProductDTO;
 import com.fsoft.team.entity.ProductEntity;
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface ProductService {
     ProductEntity findProductByID(Long id);
 
     void updateUnitsInStock(Integer newUnitsInStock, Long id);
+    
+    List<ProductEntity> getListByCategory(Long categoryId);
 }

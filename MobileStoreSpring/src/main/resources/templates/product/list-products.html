@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<header>
+    <div class="header-title">
+        <span>Moblie Store</span>
+        <div class="header-subtitle">All The Available Product In Our Store</div>
+    </div>
+
+    <div class="top-right">
+        <form action="#" method="post" th:action="@{/viewCart}" th:method="POST">
+            <button class="button-4" type="submit">
+                <i class="fa fa-shopping-cart rotateY-180" style="color:black"></i> View Cart
+            </button>
+        </form>
+    </div>
+</header>
+
+<section>
+
+    <div th:each="product : ${PRODUCT_LIST}" class="card">
+        <div class="card-title" th:text="${product.getProductName()}"></div>
+        <div class="card-image">
+            <img th:src="${product.getImage()}" alt="X" width="50%" height="40%">
+        </div>
+        <div class="card-content">
+            <p id="detail" th:text="${product.getDecription()}"></p>
+
+            <p th:text="${product.getPrice()+ ' USD'} "></p>
+            <p th:text="${product.getQuantity()} + ' units in stocks'">100 units in stocks</p>
+        </div>
+        <script>
+            function changeText() {
+                var div = document.getElementById('detail');
+                var text = div.innerHTML;
+                // var word = text.split(" ");
+                var c = text.length;
+                var newText = "";
+                if (c >250){
+
+                    newText = newText.concat(newText, text.slice(0, 250), "... ");
+                } else {
+                    newText = text;
+                }
+                div.innerHTML = newText;
+                return newText;
+
+            }
+            console.log(changeText());
+        </script>
+        
+        <div class="card-footer">
+            <form action="#" method="post" th:action="@{/detail}" th:method="POST">
+                <input type="hidden" th:value="${product.getProductId()}" name="productID"/>
+                <button name="" value="" class="button-3" type="submit">
+                    <i class="fa fa-info-circle" style="color:white"></i>
+                    Detail
+                </button>
+            </form>
+            <form action="#" method="post" th:action="@{/orderForm}" th:method="POST">
+                <input type="hidden" th:value="${product.getProductId()}" name="productID"/>
+                <button name="" value="" class="button-5" type="submit">
+                    <i class="fa fa-shopping-cart rotateY-180" style="color:white"></i>
+                    Order Now
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+</body>
+
+</html>

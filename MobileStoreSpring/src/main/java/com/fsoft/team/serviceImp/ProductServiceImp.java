@@ -3,6 +3,7 @@ package com.fsoft.team.serviceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fsoft.team.dtos.ProductDTO;
 import com.fsoft.team.entity.ProductEntity;
 import com.fsoft.team.repository.ProductRepository;
 import com.fsoft.team.service.ProductService;
@@ -36,5 +37,11 @@ public class ProductServiceImp implements ProductService {
         product.setUnitInStock(newUnitsInStock);
         productRepository.save(product);
     }
+    
+    @Override
+    public List<ProductEntity> getListByCategory(Long categoryId){
+    	return productRepository.getListByCategory(categoryId);
+    }
+    
 
 }
