@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+</head>
+
+<body>
+    <section class="addpdpage">
+        <div class="addpdpage__header">
+            <div class="container-page">
+                <div class="addpdpage__header-title">
+                    <h1>Products</h1>
+                    <p>Add products</p>
+                </div>
+                <div class="addpdpage__logout">
+                    <button class="btn btn-danger">logout</button>
+                </div>
+            </div>
+        </div>
+        <div class="addpdpage__content">
+            <div class="container-page">
+                <div class="addpdpage__content-title">
+                    <h3>Add new product</h3>
+                </div>
+                <div class="addpdpage__content-form">
+                    <div class="label-form">
+                        <p>Product Name</p>
+                        <p>Unit Price</p>
+                        <p>Units In Stock</p>
+                        <p>Description</p>
+                        <p class="--m35">Manufacturer</p>
+                        <p>Category</p>
+                        <p>Condition</p>
+                        <p>Product Image File</p>
+                    </div>
+                    <form action="#" th:action="@{/addproduct}" method="POST" th:object="${product}" enctype="multipart/form-data" >
+
+                        <input type="text" id="productName" th:field="*{productName}"/>
+                        <br />
+                        <input type="text" id="unitPrice" th:field="*{unitPrice}"/>
+                        <br />
+                        <input type="text" id="unitInStock" th:field="*{unitInStock}"/>
+                        <br />
+                        <textarea id="description" name="w3review" rows="2" cols="20" th:field="*{description}"></textarea>
+                        <br />
+                        <input type="text" id="manufacturer" th:field="*{manufacturer}"/>
+                        <br />
+                		<select th:field="*{categoryID}">
+                			<option th:each="item : ${LISTCATEGORY}" th:value="${item.categoryID}" th:text="${item.categoryName}"></option>
+                		</select>
+                        <br />
+                        <input type="radio" id="new" name="condition" value="new"/>
+                        <label for="">New</label>
+                        <input type="radio" id="old" name="condition" value="old" />
+                        <label for="">Old</label>
+                        <input type="radio" id="refur" name="condition" value="refurbished" />
+                        <label for="">Refurbished</label>
+                        <br />
+                        <input type="file" name="image"  accept="image/png, image/jpeg" />
+                        <br />
+                        <button class="btn" id="btnAddProduct">Add Product</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
